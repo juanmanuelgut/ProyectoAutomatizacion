@@ -31,8 +31,14 @@ public class HomePage extends BasePage {
         this.loginOption().click();
     }
 
+    public void navigateToRegister(){this.registerOption().click();}
+
     public void searchProductByName(String productName){
         this.searchField().sendKeys(productName);
         this.searchButton().click();
     }
+
+
+
+
 }

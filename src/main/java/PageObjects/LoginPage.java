@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends HomePage{
 
 
     public LoginPage(WebDriver driver) {
@@ -25,6 +25,7 @@ public class LoginPage extends BasePage{
     }
 
     public void doLogin(String email, String password) {
+        this.navigateToLogin();
         this.setEmailText().sendKeys(email);
         this.setPasswordText().sendKeys(password);
         this.setSubmitButton().click();
