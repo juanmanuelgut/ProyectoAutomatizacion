@@ -19,6 +19,10 @@ public class HomePage extends BasePage {
         return driver.findElement(By.xpath("//div[@id='top-links']//li[@class='dropdown open']//*[text() = 'Register']"));
     }
 
+    private WebElement shoppingCart() {
+        return driver.findElement(By.className("fa fa-shopping-cart"));
+    }
+
     private WebElement searchField() {
         return driver.findElement(By.name("search"));
     }
@@ -37,8 +41,4 @@ public class HomePage extends BasePage {
         this.searchField().sendKeys(productName);
         this.searchButton().click();
     }
-
-
-
-
 }

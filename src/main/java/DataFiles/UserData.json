@@ -1,0 +1,25 @@
+{
+  "Users":[
+    {
+      "firstName":"John",
+      "lastName":"Doe",
+      "email":"projectUser1@getnada.com",
+      "telephone":"2176663535",
+      "password":"Password5!"
+    },
+    {
+      "firstName":"Sara",
+      "lastName":"Sue",
+      "email":"projectUser2@getnada.com",
+      "telephone":"2176662424",
+      "password":"Password5!"
+    },
+    {
+      "firstName":"Gary",
+      "lastName":"Taylor",
+      "email":"projectUser3@getnada.com",
+      "telephone":"2176661313",
+      "password":"Password5!"
+    }
+  ]
+}

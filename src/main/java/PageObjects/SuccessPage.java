@@ -11,11 +11,15 @@ public class SuccessPage extends BasePage{
 
     }
 
-    private WebElement sucessMessage(){return driver.findElement(By.xpath("//title"));}
+    private WebElement sucessMessage(){
+        return driver.findElement(By.xpath("//title"));
+    }
+
+    public WebElement messageTitle(){
+        return driver.findElement(By.id("content"));
+    }
 
     public String successString(){
-
         return this.sucessMessage().getText();
-
     }
 }

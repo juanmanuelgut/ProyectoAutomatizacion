@@ -11,21 +11,37 @@ public class RegisterPage extends HomePage{
 
     }
 
-    private WebElement firstNameField(){return driver.findElement(By.id("input-firstname"));}
+    private WebElement firstNameField(){
+        return driver.findElement(By.id("input-firstname"));
+    }
 
-    private WebElement lastNameField(){return driver.findElement(By.id("input-lastname"));}
+    private WebElement lastNameField(){
+        return driver.findElement(By.id("input-lastname"));
+    }
 
-    private WebElement eMailField(){return driver.findElement(By.id("input-email"));}
+    private WebElement eMailField(){
+        return driver.findElement(By.id("input-email"));
+    }
 
-    private WebElement telephoneField(){return driver.findElement(By.id("input-telephone"));}
+    private WebElement telephoneField(){
+        return driver.findElement(By.id("input-telephone"));
+    }
 
-    private WebElement passwordField(){return driver.findElement(By.id("input-password"));}
+    private WebElement passwordField(){
+        return driver.findElement(By.id("input-password"));
+    }
 
-    private WebElement passwordConfirmField(){return driver.findElement(By.id("input-confirm"));}
+    private WebElement passwordConfirmField(){
+        return driver.findElement(By.id("input-confirm"));
+    }
 
-    private WebElement agreeCheckBox(){return driver.findElement(By.name("agree"));}
+    private WebElement agreeCheckBox(){
+        return driver.findElement(By.name("agree"));
+    }
 
-    private WebElement continueButton(){return driver.findElement(By.className("btn btn-primary"));}
+    private WebElement continueButton(){
+        return driver.findElement(By.className("btn btn-primary"));
+    }
 
     public void registerNewUser(String firstName, String lastName, String eMail, String telephone, String password){
         this.navigateToRegister();

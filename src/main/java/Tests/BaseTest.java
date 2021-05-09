@@ -26,7 +26,7 @@ public class BaseTest {
         try {
             driver.quit();
         } catch (WebDriverException ex) {
-            System.out.println("Sesion de driver esta cerrada");
+            System.out.println("Sesión del driver ha sido cerrada");
         }
     }
 
