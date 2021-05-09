@@ -1,9 +1,12 @@
 package PageObjects;
 
-import PageObjects.BasePage;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.util.List;
+import java.util.ArrayList;
 
 public class HomePage extends BasePage {
 
@@ -31,6 +34,11 @@ public class HomePage extends BasePage {
         return driver.findElement(By.xpath("//div[@id='top-links']//li[@class='dropdown open']//*[text() = 'Register']"));
     }
 
+    private List<WebElement> displayedPrices(){
+        List<WebElement> displayedPrices = driver.findElements(By.xpath("//div[@class='product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12']//div[@class='product-thumb transition']//div[@class='caption']//p[@class='price']"));
+        return displayedPrices;
+    }
+
     private WebElement shoppingCart() {
         return driver.findElement(By.className("fa fa-shopping-cart"));
     }
@@ -56,6 +64,21 @@ public class HomePage extends BasePage {
     public void toggleCurrency(String currency){
         this.CurrencyButton().click();
         this.currencyButton(currency).click();
+    }
+
+    public ArrayList<String> getCurrencyList(){
+        ArrayList<String> currencyList = new ArrayList<String>();
+        for (WebElement price : this.displayedPrices()){
+            String strPrice = price.getText();
+            if (Character.isDigit(strPrice.charAt(0))){
+                currencyList.add("EUR");
+            } else if (strPrice.charAt(0) == '$'){
+                currencyList.add("USD");
+            }else {
+                currencyList.add("GBP");
+            }
+        }
+        return currencyList;
     }
 
     public void searchProductByName(String productName){
