@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import org.testng.annotations.DataProvider;
+import pojo.CurrencyData;
 import pojo.RegisterData;
 
 import java.io.FileNotFoundException;
@@ -16,14 +17,28 @@ public class UserDataProvider {
     @DataProvider(name="getDataFromJSON")
     public Object[][] getDataFromJSON() throws FileNotFoundException{
 
-        JsonElement jsonData = JsonParser.parseReader(new FileReader("src/test/DataFiles/UserData.json"));
+        JsonElement jsonData = JsonParser.parseReader(new FileReader("src/main/java/DataFiles/UserData.json"));
         JsonElement registerDataSet = jsonData.getAsJsonObject().get("Users");
         List<RegisterData> registerData = new Gson().fromJson(registerDataSet,new TypeToken<List<RegisterData>>(){}.getType());
-        Object[][] returnValue = new Object[registerData.size()][];
+        Object[][] returnValue = new Object[registerData.size()][1];
         int index = 0;
 
         for (Object[] each: returnValue){
             each[0] = registerData.get(index++);
+        }
+        return returnValue;
+    }
+
+    @DataProvider(name="getCurrencyFromJSON")
+    public Object[][] getCurrencyFromJSON() throws FileNotFoundException{
+        JsonElement jsonData = JsonParser.parseReader(new FileReader("src/main/java/DataFiles/CurrencyData.json"));
+        JsonElement currencyDataSet = jsonData.getAsJsonObject().get("Currencies");
+        List<CurrencyData> currencyData = new Gson().fromJson(currencyDataSet,new TypeToken<List<CurrencyData>>(){}.getType());
+        Object[][] returnValue = new Object[currencyData.size()][1];
+        int index = 0;
+
+        for (Object[] each: returnValue){
+            each[0] = currencyData.get(index++);
         }
         return returnValue;
     }

@@ -11,10 +11,10 @@ public class RegisterTest extends BaseTest{
     @Test(groups = {"regression", "sanity"}, dataProvider = "getDataFromJSON", dataProviderClass = UserDataProvider.class)
     public void ShouldBeAbleToRegister(RegisterData _RegisterData) throws InterruptedException {
         RegisterPage register = new RegisterPage(driver);
-        register.registerNewUser(_RegisterData.getFirstName(), _RegisterData.getLastName(), _RegisterData.geteMail(), _RegisterData.getTelephone(), _RegisterData.getPassword());
+        //register.implicitWait(30);
+        register.registerNewUser(_RegisterData.getFirstName(), _RegisterData.getLastName(), _RegisterData.makeEmailUnique(_RegisterData.getEmail()), _RegisterData.getTelephone(), _RegisterData.getPassword());
         SuccessPage result = new SuccessPage(driver);
         result.waitUntilElementExists(result.messageTitle());
-        Assert.assertEquals(result.messageTitle().getText(),"Your Account Has Been Created!");
+        Assert.assertEquals(result.successDisplayed().isDisplayed(),true);
     }
-
 }

@@ -1,0 +1,16 @@
+{
+  "Currencies":[
+    {
+      "name":"US Dollars",
+      "currency":"USD"
+    },
+    {
+      "name":"British Pounds",
+      "currency":"GBP"
+    },
+    {
+      "name":"Euros",
+      "currency":"EUR"
+    }
+  ]
+}

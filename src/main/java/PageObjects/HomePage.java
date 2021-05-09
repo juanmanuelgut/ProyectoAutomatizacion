@@ -15,6 +15,18 @@ public class HomePage extends BasePage {
         return driver.findElement(By.xpath("//div[@id='top-links']//li[@class='dropdown open']//*[text() = 'Login']"));
     }
 
+    private WebElement myAccount(){
+        return driver.findElement(By.xpath("//div[@id='top-links']//ul[@class='list-inline']//li[@class='dropdown']"));
+    }
+
+    private WebElement CurrencyButton(){
+        return driver.findElement(By.xpath("//div[@class='pull-left']//div[@class='btn-group']//button[@class='btn btn-link dropdown-toggle']"));
+    }
+
+    private WebElement currencyButton(String currency){
+        return driver.findElement(By.name(currency));
+    }
+
     private WebElement registerOption() {
         return driver.findElement(By.xpath("//div[@id='top-links']//li[@class='dropdown open']//*[text() = 'Register']"));
     }
@@ -32,10 +44,19 @@ public class HomePage extends BasePage {
     }
 
     public void navigateToLogin(){
+        this.myAccount().click();
         this.loginOption().click();
     }
 
-    public void navigateToRegister(){this.registerOption().click();}
+    public void navigateToRegister(){
+        this.myAccount().click();
+        this.registerOption().click();
+    }
+
+    public void toggleCurrency(String currency){
+        this.CurrencyButton().click();
+        this.currencyButton(currency).click();
+    }
 
     public void searchProductByName(String productName){
         this.searchField().sendKeys(productName);

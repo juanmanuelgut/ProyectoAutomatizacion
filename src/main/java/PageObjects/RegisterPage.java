@@ -40,7 +40,11 @@ public class RegisterPage extends HomePage{
     }
 
     private WebElement continueButton(){
-        return driver.findElement(By.className("btn btn-primary"));
+        return driver.findElement(By.xpath("//div[@id='content']//div[@class='buttons']//div[@class='pull-right']//input[@class='btn btn-primary']"));
+    }
+
+    public WebElement topLinks(){
+        return driver.findElement(By.id("top-links"));
     }
 
     public void registerNewUser(String firstName, String lastName, String eMail, String telephone, String password){

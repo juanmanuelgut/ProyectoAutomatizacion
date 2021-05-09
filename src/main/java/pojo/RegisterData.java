@@ -1,10 +1,13 @@
 package pojo;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class RegisterData {
 
     private String firstName;
     private String lastName;
-    private String eMail;
+    private String email;
     private String telephone;
     private String password;
 
@@ -24,12 +27,12 @@ public class RegisterData {
         this.lastName = lastName;
     }
 
-    public String geteMail() {
-        return eMail;
+    public String getEmail() {
+        return email;
     }
 
-    public void seteMail(String eMail) {
-        this.eMail = eMail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getTelephone() {
@@ -51,8 +54,16 @@ public class RegisterData {
     public RegisterData(String firstName, String lastName, String eMail, String telephone, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.eMail = eMail;
+        this.email = eMail;
         this.telephone = telephone;
         this.password = password;
+    }
+
+    public String makeEmailUnique(String email){
+        String user = email.substring(0,email.indexOf('@')-1);
+        String domain = email.substring(email.indexOf('@'));
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        String uniqueEmail = user + timeStamp + domain;
+        return uniqueEmail;
     }
 }

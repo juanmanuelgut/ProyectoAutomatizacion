@@ -19,7 +19,8 @@ public class SuccessPage extends BasePage{
         return driver.findElement(By.id("content"));
     }
 
-    public String successString(){
-        return this.sucessMessage().getText();
+    public WebElement successDisplayed(){
+        return driver.findElement(By.id("common-success"));
     }
 }
+
