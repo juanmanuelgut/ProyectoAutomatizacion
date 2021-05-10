@@ -6,6 +6,7 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import org.testng.annotations.DataProvider;
 import pojo.CurrencyData;
+import pojo.ProductData;
 import pojo.RegisterData;
 
 import java.io.FileNotFoundException;
@@ -46,13 +47,13 @@ public class UserDataProvider {
     @DataProvider(name="getProductsFromJSON")
     public Object[][] getProductsFromJSON() throws FileNotFoundException{
         JsonElement jsonData = JsonParser.parseReader(new FileReader("src/main/java/DataFiles/ProductData.json"));
-        JsonElement currencyDataSet = jsonData.getAsJsonObject().get("Currencies");
-        List<CurrencyData> currencyData = new Gson().fromJson(currencyDataSet,new TypeToken<List<CurrencyData>>(){}.getType());
-        Object[][] returnValue = new Object[currencyData.size()][1];
+        JsonElement productDataSet = jsonData.getAsJsonObject().get("Products");
+        List<ProductData> productData = new Gson().fromJson(productDataSet,new TypeToken<List<ProductData>>(){}.getType());
+        Object[][] returnValue = new Object[productData.size()][1];
         int index = 0;
 
         for (Object[] each: returnValue){
-            each[0] = currencyData.get(index++);
+            each[0] = productData.get(index++);
         }
         return returnValue;
     }

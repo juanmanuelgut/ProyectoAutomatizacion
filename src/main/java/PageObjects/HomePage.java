@@ -26,7 +26,7 @@ public class HomePage extends BasePage  {
         return driver.findElement(By.xpath("//div[@class='pull-left']//div[@class='btn-group']//button[@class='btn btn-link dropdown-toggle']"));
     }
 
-    private WebElement currencyButton(String currency){
+    private WebElement selectedCurrencyButton(String currency){
         return driver.findElement(By.name(currency));
     }
 
@@ -48,7 +48,7 @@ public class HomePage extends BasePage  {
     }
 
     private WebElement searchButton() {
-        return driver.findElement(By.className("btn btn-default btn-lg"));
+        return driver.findElement(By.xpath("//div[@class='input-group']//span[@class='input-group-btn']//button[@class='btn btn-default btn-lg']"));
     }
 
     public void navigateToLogin(){
@@ -63,7 +63,7 @@ public class HomePage extends BasePage  {
 
     public void toggleCurrency(String currency){
         this.CurrencyButton().click();
-        this.currencyButton(currency).click();
+        this.selectedCurrencyButton(currency).click();
     }
 
     public ArrayList<String> getCurrencyList(){
