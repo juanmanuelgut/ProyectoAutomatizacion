@@ -8,14 +8,14 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.ArrayList;
 
-public class HomePage extends BasePage {
+public class HomePage extends BasePage  {
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
     private WebElement loginOption() {
-        return driver.findElement(By.xpath("//div[@id='top-links']//li[@class='dropdown open']//*[text() = 'Login']"));
+        return this.driver.findElement(By.xpath("//div[@id='top-links']//li[@class='dropdown open']//*[text() = 'Login']"));
     }
 
     private WebElement myAccount(){

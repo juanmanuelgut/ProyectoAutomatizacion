@@ -1,0 +1,16 @@
+{
+  "Products":[
+    {
+      "name":"iPhone",
+      "searchString":"iPhone"
+    },
+    {
+      "name":"Camera",
+      "searchString":"Canon"
+    },
+    {
+      "name":"Computer",
+      "searchString":"iMac"
+    }
+  ]
+}

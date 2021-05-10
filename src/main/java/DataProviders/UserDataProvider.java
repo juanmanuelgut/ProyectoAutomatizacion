@@ -43,4 +43,19 @@ public class UserDataProvider {
         return returnValue;
     }
 
+    @DataProvider(name="getProductsFromJSON")
+    public Object[][] getProductsFromJSON() throws FileNotFoundException{
+        JsonElement jsonData = JsonParser.parseReader(new FileReader("src/main/java/DataFiles/ProductData.json"));
+        JsonElement currencyDataSet = jsonData.getAsJsonObject().get("Currencies");
+        List<CurrencyData> currencyData = new Gson().fromJson(currencyDataSet,new TypeToken<List<CurrencyData>>(){}.getType());
+        Object[][] returnValue = new Object[currencyData.size()][1];
+        int index = 0;
+
+        for (Object[] each: returnValue){
+            each[0] = currencyData.get(index++);
+        }
+        return returnValue;
+    }
+
+
 }
