@@ -13,7 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
 
-public class UserDataProvider {
+public class UserDataProvider {//autor:  Juan Gutiérrez
 
     @DataProvider(name="getDataFromJSON")
     public Object[][] getDataFromJSON() throws FileNotFoundException{

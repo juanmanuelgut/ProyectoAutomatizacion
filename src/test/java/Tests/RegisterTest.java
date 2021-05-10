@@ -7,7 +7,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pojo.RegisterData;
 
-public class RegisterTest extends BaseTest{
+public class RegisterTest extends BaseTest{ //autor:  Juan Gutiérrez
+
     @Test(groups = {"regression", "sanity"}, dataProvider = "getDataFromJSON", dataProviderClass = UserDataProvider.class)
     public void ShouldBeAbleToRegister(RegisterData _RegisterData) throws InterruptedException {
         RegisterPage register = new RegisterPage(driver);

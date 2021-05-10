@@ -13,7 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class BaseTest {
+public class BaseTest { //autor:  Juan Gutiérrez
     public WebDriver driver;
     public String baseURL = "https://demo.opencart.com/";
 

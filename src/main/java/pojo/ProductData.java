@@ -1,6 +1,6 @@
 package pojo;
 
-public class ProductData {
+public class ProductData { //autor:  Juan Gutiérrez
 
     private String name;
     private String searchString;

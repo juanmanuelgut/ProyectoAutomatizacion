@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pojo.CurrencyData;
 
-public class CurrencyTest extends BaseTest{
+public class CurrencyTest extends BaseTest{ //autor:  Juan Gutiérrez
 
     @Test(groups = {"regression", "sanity"}, dataProvider = "getCurrencyFromJSON", dataProviderClass = UserDataProvider.class)
     public void pricesDiplayedDollars(CurrencyData _CurrencyData){

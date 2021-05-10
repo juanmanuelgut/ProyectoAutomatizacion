@@ -1,6 +1,6 @@
 package pojo;
 
-public class CurrencyData {
+public class CurrencyData { //autor:  Juan Gutiérrez
 
     private String name;
     private String currency;

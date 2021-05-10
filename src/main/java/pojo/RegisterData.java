@@ -3,7 +3,7 @@ package pojo;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class RegisterData {
+public class RegisterData { //autor:  Juan Gutiérrez
 
     private String firstName;
     private String lastName;

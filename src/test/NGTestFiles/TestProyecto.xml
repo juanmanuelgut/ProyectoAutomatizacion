@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Proyecto Suite">
+    <test name="Proyecto">
+        <groups>
+            <run>
+                <include name = "regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name = "Tests.CurrencyTest"></class>
+            <class name = "Tests.ShoppingCartTest"></class>
+            <class name = "Tests.RegisterTest"></class>
+        </classes>
+    </test>
+</suite>

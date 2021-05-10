@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pojo.ProductData;
 
-public class ShoppingCartTest extends BaseTest{
+public class ShoppingCartTest extends BaseTest{ //autor:  Juan Gutiérrez
 
     @Test(groups = {"regression", "sanity"}, dataProvider = "getProductsFromJSON", dataProviderClass = UserDataProvider.class)
     public void shouldBeAbletoAddProductToCart(ProductData _ProductData){

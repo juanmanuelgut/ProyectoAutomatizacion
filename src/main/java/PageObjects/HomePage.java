@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.ArrayList;
 
-public class HomePage extends BasePage  {
+public class HomePage extends BasePage  {//autor:  Juan Gutiérrez
 
     public HomePage(WebDriver driver) {
         super(driver);
