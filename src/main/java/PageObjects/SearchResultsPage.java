@@ -22,7 +22,13 @@ public class SearchResultsPage extends BasePage{ //autor:  Juan Gutiérrez
         return driver.findElement(By.xpath("//div[@id='product-search']//div[@class='alert alert-success alert-dismissible']"));
     }
 
+    public WebElement shoppingCartButton(){return driver.findElement(By.xpath("//div[@id='top-links']//ul[@class='list-inline']//li//a[@title='Shopping Cart']"));}
+
     public void addProductToCart(){
         this.addCartButton().click();
+    }
+
+    public void openShoppingCart() {
+        this.shoppingCartButton().click();
     }
 }

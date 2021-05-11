@@ -1,6 +1,7 @@
 package Tests;
 
 import DataProviders.UserDataProvider;
+import PageObjects.CartPage;
 import PageObjects.HomePage;
 import PageObjects.SearchResultsPage;
 import org.testng.Assert;
@@ -17,6 +18,10 @@ public class ShoppingCartTest extends BaseTest{ //autor:  Juan Gutiérrez
         results.waitUntilElementExists(results.searchPageContentHeader());
         results.addProductToCart();
         results.implicitWait(5);
-        Assert.assertTrue(results.cartSuccessRibbon().getText().contains("Success"),"Adding Product to cart was unsuccessful");
+        results.waitUntilElementExists(results.cartSuccessRibbon());
+        results.openShoppingCart();
+        CartPage cart = new CartPage(driver);
+        cart.waitUntilElementExists(cart.shoppingCartTitle());
+        Assert.assertTrue(cart.strProductName().contains(_ProductData.getSearchString()), "Producto no añadido al Carrito");
     }
 }
